@@ -1,0 +1,198 @@
+.blog {
+  margin-bottom: 100px;
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    .grid-item {
+      position: relative;
+      &:first-child {
+        grid-row: 1 / 3;
+        background-image: url("./../images/blog_1.png");
+        padding-bottom: calc(100% * 72 / 65);
+        background-size: cover;
+        background-position: center;
+      }
+      &:nth-child(2) {
+        background-image: url("./../images/blog_2.png");
+        background-size: cover;
+        background-position: center;
+      }
+      &:last-child {
+        .grid-content {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          position: static;
+          justify-content: center;
+          height: 100%;
+          max-width: 70%;
+          margin: 0 auto;
+          text-align: center;
+          h2 {
+            color: $gray;
+            position: relative;
+            margin-bottom: 60px;
+            text-transform: unset;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -30px;
+              left: 50%;
+              transform: translate(-50%);
+              width: 40%;
+              height: 2px;
+              background-color: $pink-color;
+            }
+          }
+          p {
+            color: $gray-light;
+          }
+        }
+      }
+      .btn-tag {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
+      .grid-content {
+        position: absolute;
+        bottom: 15%;
+        left: 15%;
+        right: 15%;
+        h6 {
+          font-family: $secondary-font;
+          font-size: 14px;
+          line-height: 1.4;
+          font-weight: 500;
+          opacity: 1;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin-bottom: 10px;
+        }
+        h2 {
+          color: #fff;
+          text-transform: uppercase;
+          margin-bottom: 30px;
+        }
+        p {
+          color: #fff;
+          font-size: 14px;
+          line-height: lineH(24, 14);
+        }
+        .btn {
+          text-transform: uppercase;
+          margin-top: 30px;
+          font-size: 14px;
+          letter-spacing: 2px;
+          border-radius: 0;
+          padding: 10px 30px;
+          font-weight: 600;
+          transition: 0.3s all;
+        }
+        .btn-viewall {
+          background: $gray;
+          color: #fff;
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -50px;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-image: url("./../images/pointer.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
+          }
+          &:hover {
+            &:before {
+              animation: pointer-enter 1.5s infinite;
+            }
+          }
+          img {
+            margin-left: 5px;
+          }
+        }
+        .btn-more {
+          background: #fff;
+          color: $gray;
+          &:hover {
+            color: #fff;
+            background: $gray;
+          }
+        }
+      }
+    }
+  }
+  @include maxw(1200px) {
+    &-grid {
+      .grid-item {
+        .grid-content {
+          left: 5%;
+          right: 5%;
+        }
+        .btn-tag {
+          left: 5%;
+          top: 5%;
+        }
+      }
+    }
+  }
+  @include maxw(1023px) {
+    &-grid {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto;
+      .grid-item {
+        .btn-tag {
+          left: 15px;
+          top: 15px;
+          font-size: 12px;
+        }
+        .grid-content {
+          left: 15px;
+          right: 15px;
+        }
+        &:first-child {
+          grid-row: unset;
+        }
+        &:nth-child(2) {
+          padding-bottom: calc(100% * 4 / 7);
+        }
+        &:last-child {
+          order: -1;
+          margin-bottom: 30px;
+          .grid-content {
+            h2 {
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include maxw(576px) {
+    &-grid {
+      .grid-item {
+        .grid-content {
+          bottom: 15px;
+          h2 {
+            font-size: 16px;
+            line-height: lineH(24, 16);
+            margin-bottom: 15px;
+          }
+          .btn {
+            margin-top: 15px;
+            padding: 5px 15px;
+            line-height: lineH(24, 16);
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

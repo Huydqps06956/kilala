@@ -1,0 +1,142 @@
+.footer {
+  padding: 30px 0px;
+  background-color: $gray-bg-footer;
+  &-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 0 80px;
+  }
+  &-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 0 80px;
+    a {
+      display: block;
+    }
+  }
+  &-logo {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+  &-desc {
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-family: $primary-font;
+  }
+  &-column {
+    color: $gray-dark;
+    font-weight: 300;
+  }
+  &-heading {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  &-links {
+    list-style: none;
+  }
+  &-item {
+    margin-bottom: 20px;
+  }
+  &-link {
+    display: inline-block;
+  }
+
+  &-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+  .btn-submit {
+    background-color: #332f29;
+    width: 100%;
+    height: 40px;
+  }
+  @include maxw(1023px) {
+    &-main {
+      grid-gap: 0 30px;
+    }
+  }
+  @include maxw(767px) {
+    padding: 20px 0;
+    &-info {
+      grid-template-columns: auto auto;
+    }
+    &-main {
+      grid-template-columns: 1fr;
+      grid-gap: 30px 0;
+    }
+    &-heading {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    &-container {
+      padding: 35px 15px;
+    }
+  }
+  @include maxw(576px) {
+    padding: 20px 0;
+    &-info {
+      grid-template-columns: auto;
+      gap: 30px;
+    }
+    &-desc {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.contact {
+  &-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  &-header {
+    margin: 0 auto 100px;
+    text-align: center;
+  }
+  &-heading {
+    font-weight: 400;
+  }
+  &-desc {
+    color: #ccc;
+  }
+
+  &-field {
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(#ccc, 0.5);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    color: #ccc;
+    transition: border 0.2s linear;
+    &::-webkit-input-placeholder {
+      color: #ccc;
+    }
+    &::-moz-input-placeholder {
+      color: #ccc;
+    }
+    &:focus {
+      border-color: #ccc;
+    }
+  }
+  &-area {
+    line-height: 1.55;
+    resize: none;
+    min-height: 100px;
+  }
+  @include maxw(1023px) {
+    padding: 100px 0;
+    &-header {
+      margin-bottom: 50px;
+    }
+  }
+  @include maxw(767px) {
+    padding: 50px 0;
+    &-header {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.header {
+  &-logo {
+    display: inline-block;
+    img {
+      width: 10.72vw;
+      margin-left: 15px;
+    }
+  }
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.15);
+    &.fixed-header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      background-color: #fff;
+      z-index: 99;
+      animation: fadeInHeader 0.6s both;
+    }
+  }
+  &-phone {
+    color: $gray;
+    font-weight: 300;
+    a {
+      font-weight: 600;
+      margin-left: 15px;
+      color: inherit;
+    }
+  }
+  @include maxw(767px) {
+    &-logo {
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 0 60px;
+  justify-content: flex-end;
+}
+@include maxw(1023px) {
+  .navigation {
+    gap: 0 25px;
+  }
+  .header-main {
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,50 @@
+.reference {
+  margin-bottom: 100px;
+  &-header {
+    max-width: 590px;
+    margin: 0 auto 100px;
+    text-align: center;
+  }
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: $gray-divide;
+    grid-gap: 1px;
+  }
+  &-item {
+    background: #fff;
+    padding: 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+    img {
+      transition: transform 0.5s ease-in-out;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    line-height: lineH(32, 18);
+  }
+  @include maxw(1023px) {
+    &-item {
+      padding: 0 25px;
+    }
+  }
+  @include maxw(767px) {
+    margin-bottom: 50px;
+    &-main {
+      grid-template-columns: 1fr 1fr;
+    }
+    &-desc {
+      font-size: 16px;
+      text-align: justify;
+    }
+  }
+}

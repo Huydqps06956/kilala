@@ -1,0 +1,105 @@
+.menu {
+  &-list {
+    display: flex;
+    list-style: none;
+  }
+  &-link {
+    display: block;
+    padding: 30px 50px;
+    color: $gray;
+    border-radius: 6px;
+    transition: all 0.15s linear;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 2px solid $pink-color;
+      content: "";
+      display: block;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: left;
+      transform-origin: left;
+      -webkit-transition: -webkit-transform 0.25s
+        cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: -webkit-transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1),
+        -webkit-transform 0.25s cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+    &:hover {
+      color: $pink-color;
+      background-color: #fff;
+      &:after {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+  &-item {
+    border-left: 1px solid $gray-divide;
+  }
+  &-close {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    display: none;
+  }
+  &-open {
+    margin-right: 15px;
+    display: none;
+  }
+  &-toggle {
+    cursor: pointer;
+  }
+  @include maxw(1280px) {
+    &-link {
+      padding: 30px;
+    }
+  }
+  @include maxw(1023px) {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transform: translateX(100%);
+    transition: transform 0.2s linear;
+    will-change: transform;
+    &.is-active {
+      transform: translateX(0);
+      .menu-close {
+        display: block;
+      }
+    }
+    &-list {
+      height: 100%;
+      padding: 70px 20px 20px;
+      flex-direction: column;
+      z-index: 99;
+    }
+    &-item {
+      margin-bottom: 15px;
+      border: none;
+    }
+    &-open {
+      display: block;
+    }
+    &-link {
+      padding: 10px;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
