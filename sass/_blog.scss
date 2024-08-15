@@ -175,6 +175,9 @@
       }
     }
   }
+  @include maxw(767px) {
+    margin-bottom: 0;
+  }
   @include maxw(576px) {
     &-grid {
       .grid-item {

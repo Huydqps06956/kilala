@@ -764,6 +764,7 @@ section.visible {
   }
   .about .tabs .tab {
     min-width: 100px;
+    padding: 10px;
   }
 }
 
@@ -931,6 +932,11 @@ section.visible {
   }
   .blog-grid .grid-item:last-child .grid-content h2 {
     font-size: 25px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .blog {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 576px) {
