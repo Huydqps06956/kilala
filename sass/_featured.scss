@@ -100,7 +100,17 @@
       width: 100%;
     }
   }
-  @include maxw(1575px) {
+  @include maxw(1555px) {
+    &-btn {
+      margin-top: -15px;
+    }ç
+  }
+  @include maxw(1500px) {
+    &-btn {
+      margin-top: -50px;
+    }
+  }
+  @include maxw(1420px) {
     &-btn {
       margin-top: -100px;
     }

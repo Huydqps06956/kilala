@@ -56,10 +56,10 @@
       align-items: center;
       border: 1px solid $gray-divide;
       border-radius: 50%;
-      transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out, opacity 0.3s ease-in-out;
       img {
         object-fit: cover;
-        transform: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
       }
     }
   }
