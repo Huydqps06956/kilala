@@ -80,17 +80,17 @@
     opacity: 0;
     z-index: 1;
     &[data-item="one"] {
-      background: url("/images/slider.png");
+      background: url("./../images/slider.png");
       background-size: cover;
       background-position: 50% 40%;
     }
     &[data-item="two"] {
-      background: url("/images/slider.png");
+      background: url("./../images/slider.png");
       background-size: cover;
       background-position: 50% 40%;
     }
     &[data-item="three"] {
-      background: url("/images/slider.png");
+      background: url("./../images/slider.png");
       background-size: cover;
       background-position: 50% 40%;
     }
